@@ -27,6 +27,7 @@ function makeBadArray(numOfElements = 10, makeItMissing = 5) {
 }
 
 // Solutin-1:
+// For Loop
 function findMissingElementS1(array) {
     if (array.length < 2) {
         return 'Invalid input. The array should have at least two elements.';
@@ -50,13 +51,14 @@ let goodList = makeGoodArray(numOfElements);
 let badList = makeBadArray(numOfElements, makeItMissing);
 
 function test1() {
-    let time1a = new Date().getTime();
+    let timeStart = performance.now();
     let missingNumber = findMissingElementS1(badList);
-    let time1b = new Date().getTime();
-    console.log(`\nSolution:\t1\nMissing number:\t${missingNumber}\nRun time:\t${time1b - time1a} ms`);
+    let timeEnd = performance.now();
+    console.log(`\nSolution:\t1\nMissing number:\t${missingNumber}\nRun time:\t${timeEnd - timeStart} ms`);
     console.log('----------');
 }
 
 test1();
 
-// Solution-2: coming up shortly...
+// Solution-2:
+// Binary Search, coming up shortly...
