@@ -1,6 +1,6 @@
-// Given an array of integers.
-// The array is sorted, the first element is 1, the increment is 1.
-// 1 element is missing.
+// Given a sorted array of integers.
+// The integers are from 1 to n, increment is 1.
+// 1 element is missing (but not the n-th element).
 // Task: Find the missing element.
 
 // This returns a GOOD array with NO missing element
@@ -45,8 +45,42 @@ function findMissingElementS1(array) {
     return 'No missing number.'
 }
 
+// Solution-2:
+// Binary Search
+function findMissingElementS2(arrayGood, arrayBad) {
+    //
+    let startIndex = 0;
+    let endIndex = arrayGood.length - 1;
+    let middleIndex = startIndex + Math.round((endIndex - startIndex) / 2 - 0.5);
+    let isMatching;
+    //
+    while (endIndex - startIndex > 2) {
+        isMatching = arrayBad[middleIndex] === arrayGood[middleIndex];
+        //
+        if (isMatching) {
+            startIndex = middleIndex;
+            middleIndex = startIndex + Math.round((endIndex - startIndex) / 2 - 0.5);
+        }
+        //
+        if (!isMatching) {
+            endIndex = middleIndex;
+            middleIndex = startIndex + Math.round((endIndex - startIndex) / 2 - 0.5);
+        }
+    }
+    //
+    for (let i = startIndex; i <= endIndex; i++) {
+        //
+        if (arrayBad[i] !== arrayGood[i]) {
+            //
+            return arrayGood[i];
+        }
+    }
+    //
+    return 'No missing number.'
+}
+
 let numOfElements = 10000000;   // 10,000,000
-let makeItMissing = 9542001;    //  9,542,001
+let makeItMissing = 9542003;    //  9,542,003
 let goodList = makeGoodArray(numOfElements);
 let badList = makeBadArray(numOfElements, makeItMissing);
 
@@ -58,7 +92,13 @@ function test1() {
     console.log('----------');
 }
 
-test1();
+function test2() {
+    let timeStart = performance.now();
+    let missingNumber = findMissingElementS2(goodList, badList);
+    let timeEnd = performance.now();
+    console.log(`\nSolution:\t2\nMissing number:\t${missingNumber}\nRun time:\t${timeEnd - timeStart} ms`);
+    console.log('----------');
+}
 
-// Solution-2:
-// Binary Search, coming up shortly...
+test1();
+test2();
