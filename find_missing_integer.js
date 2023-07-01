@@ -1,3 +1,9 @@
+// Given a sorted array of integers.
+// The integers are from 1 to n, increment is 1.
+// One of the elements is missing, but not the 1st or n-th element.
+// Task: Find the missing element.
+
+
 // Solution-1:
 // for... loop
 function findMissingElementS1(array) {
@@ -10,6 +16,7 @@ function findMissingElementS1(array) {
     }
     return 'No missing number.'
 }
+
 
 // Solution-2:
 // binary search
@@ -27,3 +34,4 @@ function findMissingElement(arr) {
     }
     return arr[left] + 1;
 }
+
