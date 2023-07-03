@@ -94,3 +94,18 @@ const findMinMaxS4 = (list) => {
 }
 
 console.log('forEach & ternary\n', findMinMaxS4(array));
+
+
+// Solution-5
+// built in methods
+const findMinMaxS5 = (list) => {
+    let min = { value: list[0], index: 0 };
+    let max = { value: list[0], index: 0 };
+    min.value = Math.min(...array);
+    min.index = array.indexOf(Math.min(...array));
+    max.value = Math.max(...array);
+    max.index = array.indexOf(Math.max(...array));
+    return { min, max };
+}
+
+console.log('built in functions\n', findMinMaxS5(array));
