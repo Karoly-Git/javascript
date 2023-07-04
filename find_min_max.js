@@ -110,3 +110,49 @@ const findMinMaxS5 = (list) => {
 
 console.log('built in functions\n', findMinMaxS5(array));
 
+/* !!!   TO BE ADDED FROM HERE   !!! */
+(function test() {
+    let start;
+    let end;
+
+    start = performance.now();
+    findMinMaxS1(array);
+    end = performance.now();
+    console.log(end - start);
+
+    start = performance.now();
+    findMinMaxS2(array);
+    end = performance.now();
+    console.log(end - start);
+
+    start = performance.now();
+    findMinMaxS3(array);
+    end = performance.now();
+    console.log(end - start);
+
+    start = performance.now();
+    findMinMaxS4(array);
+    end = performance.now();
+    console.log(end - start);
+
+    start = performance.now();
+    findMinMaxS5(array);
+    end = performance.now();
+    console.log(end - start);
+
+})();
+
+const arraySize = 100000;
+const min = -100000;
+const max = 100000;
+
+const getRandomInteger = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const arrayNew = Array.from({ length: arraySize }, () =>
+    getRandomInteger(min, max)
+);
+
+
+//console.log(array);
