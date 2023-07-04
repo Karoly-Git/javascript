@@ -41,7 +41,7 @@ function findMissingElementS1(array) {
 
 // Solution-2:
 // binary search
-function findMissingElement(arr) {
+function findMissingElementS2(arr) {
     let left = 0;
     let right = arr.length - 1;
 
@@ -55,82 +55,3 @@ function findMissingElement(arr) {
     }
     return arr[left] + 1;
 }
-
-
-
-
-/******************/
-let numOfElements = 10000000;   // 10,000,000
-let makeItMissing = 9542003;    //  9,542,003
-let goodList = makeGoodArray(numOfElements);
-let badList = makeBadArray(numOfElements, makeItMissing);
-
-function test1() {
-    let timeStart = performance.now();
-    let missingNumber = findMissingElementS1(badList);
-    let timeEnd = performance.now();
-    console.log(`\nSolution:\t1\nMissing number:\t${missingNumber}\nRun time:\t${timeEnd - timeStart} ms`);
-    console.log('----------');
-}
-
-
-
-
-function test2() {
-    let timeStart = performance.now();
-    let missingNumber = findMissingElementS2(goodList, badList);
-    let timeEnd = performance.now();
-    console.log(`\nSolution:\t2\nMissing number:\t${missingNumber}\nRun time:\t${timeEnd - timeStart} ms`);
-    console.log('----------');
-}
-
-test1();
-test2();
-
-
-// adding descriotion
-
-// This time the array is unsorted.
-// Task: Find the missing element.
-
-function findMissingInUnsorted(array) {
-    let n = array.length + 1;               // +1, because that would be the number of elements if one of them wasn't missing
-    let calculatedSum = (n * (n + 1)) / 2;  // formula to calculate the sum of the first n natural numbers starting with 1
-    let countedSum = 0;                     // sum for the loop
-    for (let i of array) {
-        countedSum += i;
-    }
-    // the missing number will be the differenc of the 'calculatedSum' and the 'countedSum'
-    return calculatedSum - countedSum;
-}
-
-let unsortedArray = [4, 7, 9, 1, 5, 3, 10, 2, 8];
-
-console.log(findMissingInUnsorted(unsortedArray));
-
-// This time the array is unsorted and there are multiple missing elements.
-// Task: Find all the missing elements.
-
-let multipleMissing = [4, 19, 11, 18, 16, 13, 17, 15, 1, 12, 20, 5, 10, 2, 14, 8]; // 3, 6, 7, 9
-
-function findMultipleMissing(array) {
-    let sortedArray = array.sort((a, b) => a - b);
-    let missingNumbers = [];
-    for (let i = 0; i < array.length - 2; i++) {
-        let currentNumber = sortedArray[i];
-        let nextNumber = sortedArray[i + 1];
-        if (nextNumber - currentNumber !== 1) {
-            for (let j = 1; j < (nextNumber - currentNumber); j++) {
-                missingNumbers.push(currentNumber + j);
-            }
-        }
-    }
-    return {
-        first: sortedArray[0],
-        missingNumbers, last:
-            sortedArray[sortedArray.length - 1]
-    };
-}
-
-console.log(findMultipleMissing(multipleMissing));
-
