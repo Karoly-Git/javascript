@@ -55,3 +55,4 @@ function findMissingElementS2(arr) {
     }
     return arr[left] + 1;
 }
+
