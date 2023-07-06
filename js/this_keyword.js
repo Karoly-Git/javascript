@@ -23,15 +23,9 @@ let obj = {
 
 obj.greet(); // Output: Hello, Karoly!
 
-
-
-/* !!!   TO BE ADDED FROM HERE   !!! */
-
-
-
 //  3.  Explicit binding:
-//      You can explicitly set the value of this by using functions like call(), apply(), or bind().
-//      For instance:
+/*You can explicitly set the value of this by using functions like call(), apply(), or bind().*/
+// For instance:
 
 function greet() {
     console.log(`Hello, ${this.name}!`);
@@ -41,22 +35,3 @@ const person = { name: 'Alice' };
 
 greet.call(person); // Output: Hello, Alice!
 
-//  4.  Arrow functions:
-//      Arrow functions have a lexical scope for this,
-//      which means that this will be inherited from the parent scope.
-//      In other words, this inside an arrow function will always be the same 
-//      as this outside of the arrow function.
-
-const obj2 = {
-    name: 'Bob',
-    greet: () => {
-        console.log(`Hello, ${this.name}!`);
-    }
-};
-
-obj2.greet(); // Output: Hello, undefined! (this.name is undefined as `this` refers to global scope)
-
-/*
-Understanding the context and usage of this is essential for developing robust JavaScript applications.
-The appropriate use of this depends on the specific scenario and how you want your code to behave.
-*/
