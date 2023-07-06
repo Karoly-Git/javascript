@@ -3,8 +3,11 @@ array and accumulate the values into a single result. It applies
 a callback function to each element of the array and returns a single value.
 */
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbers = [1, 2, 3, 4, 5];
 
-let sum = arr.reduce((a, b) => a + b, 100);
+// Summing all numbers using reduce
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+});
 
-console.log(sum);
+console.log(sum); // Output: 15
