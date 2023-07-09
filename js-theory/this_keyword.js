@@ -49,3 +49,19 @@ const obj2 = {
 
 obj2.greet(); // Output: Hello, undefined! (this.name is undefined as `this` refers to global scope)
 
+/*
+Understanding the context and usage of this is essential for developing robust JavaScript applications.
+The appropriate use of this depends on the specific scenario and how you want your code to behave.
+*/
+
+const square = {
+    length: 5,
+    width: 10,
+    unit: 'm',
+    area: function () {
+        return `${this.length * this.width}m\u00B2`
+    }
+}
+
+console.log('Area:', square.area()); // Output: Area: 50m2
+
