@@ -41,7 +41,7 @@ function findMissingElementS1(array) {
 
 // Solution-2:
 // binary search
-function findMissingElementS2(arr) {
+function findMissingElement(arr) {
     let left = 0;
     let right = arr.length - 1;
 
@@ -55,4 +55,22 @@ function findMissingElementS2(arr) {
     }
     return arr[left] + 1;
 }
+
+// This time the array is unsorted.
+// Task is the same: Find the missing element.
+
+function findMissingInUnsorted(array) {
+    let n = array.length + 1;               // +1, because that would be the number of elements if one of them wasn't missing
+    let calculatedSum = (n * (n + 1)) / 2;  // formula to calculate the sum of the first n natural numbers starting with 1
+    let countedSum = 0;                     // sum for the loop
+    for (let i of array) {
+        countedSum += i;
+    }
+    // the missing number will be the differenc of the 'calculatedSum' and the 'countedSum'
+    return calculatedSum - countedSum;
+}
+
+let unsortedArray = [4, 7, 9, 1, 5, 3, 10, 2, 8];
+
+console.log(findMissingInUnsorted(unsortedArray));
 
