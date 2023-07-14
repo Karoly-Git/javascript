@@ -74,3 +74,29 @@ let unsortedArray = [4, 7, 9, 1, 5, 3, 10, 2, 8];
 
 console.log(findMissingInUnsorted(unsortedArray));
 
+// This time the array is unsorted and there are multiple missing elements.
+// Task: Find all the missing elements.
+
+let multipleMissing = [4, 19, 11, 18, 16, 13, 17, 15, 1, 12, 20, 5, 10, 2, 14, 8]; // Missing numbers: 3, 6, 7, 9
+
+function findMultipleMissing(array) {
+    let sortedArray = array.sort((a, b) => a - b);
+    let missingNumbers = [];
+    for (let i = 0; i < array.length - 2; i++) {
+        let currentNumber = sortedArray[i];
+        let nextNumber = sortedArray[i + 1];
+        if (nextNumber - currentNumber !== 1) {
+            for (let j = 1; j < (nextNumber - currentNumber); j++) {
+                missingNumbers.push(currentNumber + j);
+            }
+        }
+    }
+    return {
+        first: sortedArray[0],
+        missingNumbers, last:
+        sortedArray[sortedArray.length - 1]
+    };
+}
+
+console.log(findMultipleMissing(multipleMissing));
+
