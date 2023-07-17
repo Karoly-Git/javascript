@@ -11,3 +11,11 @@ const sum = numbers.reduce((accumulator, currentValue) => {
 });
 
 console.log(sum); // Output: 15
+
+// Calculating the product of all numbers using reduce
+const product = numbers.reduce((accumulator, currentValue) => {
+    return accumulator * currentValue;
+});
+
+console.log(product); // Output: 120
+
