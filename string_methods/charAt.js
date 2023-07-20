@@ -25,9 +25,7 @@ the character variable and printed to the console.
 It's important to note that if the index provided is out of range 
 (less than 0 or greater than or equal to the length of the string), 
 an empty string will be returned.
-*/
 
-/*
 In JavaScript, you can also use bracket notation [] to access individual 
 characters of a string. So, instead of using the charAt() method, 
 you can directly access the character at a specific index using [] notation.
