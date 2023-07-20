@@ -12,5 +12,18 @@ Here, array1 is the initial array, and array2, array3, ..., arrayN
 are the arrays you want to concatenate. You can pass multiple arrays 
 separated by commas, and they will be merged in the order they appear 
 in the arguments list.
+*/
 
+// Example:
+
+const fruits1 = ['apple', 'banana'];
+const fruits2 = ['orange', 'grape'];
+const allFruits = fruits1.concat(fruits2);
+
+console.log(allFruits); // Output: ['apple', 'banana', 'orange', 'grape']
+
+/*
+The concat() method is useful when you need to combine arrays without modifying 
+the original arrays. If you want to add elements to an existing array in place, 
+you can use the push() method or the spread operator (...) to achieve that.
 */
