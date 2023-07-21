@@ -29,5 +29,18 @@ array in place, you can use the push() method or the spread operator (...)
 to achieve that.
 */
 
+/*
+Using the spread operator (...) is another way to concatenate arrays in 
+JavaScript, and in many cases, it can be a more concise and convenient 
+option. The spread operator allows you to spread the elements of one array 
+into another array, creating a new array with the combined elements.
+*/
 
+// Here's an example of using the spread operator for array concatenation:
+
+const fruitsSpead1 = ['kiwi', 'grapes'];
+const fruitsSpread2 = ['mango', 'pineapple'];
+const allFruitsSpread = [...fruitsSpead1, ...fruitsSpread2];
+
+console.log(allFruitsSpread); // Output: ['kiwi', 'grapes', 'mango', 'pineapple']
 
