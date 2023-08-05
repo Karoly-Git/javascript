@@ -30,8 +30,8 @@ function arraySum(arr) {
 }
 
 
-// Fibonacci sequence
-function fibonacciRecursive(n, fibNums = [1, 1]) {
+// Return the first n Fibonacci numbers
+function fibonacci(n, fibNums = [1, 1]) {
     if (n <= fibNums.length) {
         return fibNums.slice(0, n);
     }
