@@ -110,3 +110,15 @@ const findMinMaxS5 = (list) => {
 
 console.log('built in functions\n', findMinMaxS5(array));
 
+
+//Testing performance
+function test() {
+    let start;
+    let end;
+
+    start = performance.now();
+    findMinMaxS1(array);
+    end = performance.now();
+    console.log(end - start);
+};
+
