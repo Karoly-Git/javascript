@@ -120,5 +120,10 @@ function test() {
     findMinMaxS1(array);
     end = performance.now();
     console.log(end - start);
+
+    start = performance.now();
+    findMinMaxS2(array);
+    end = performance.now();
+    console.log(end - start);
 };
 
