@@ -131,7 +131,7 @@ function test() {
     end = performance.now();
     console.log(end - start);
 
-     start = performance.now();
+    start = performance.now();
     findMinMaxS4(array);
     end = performance.now();
     console.log(end - start);
