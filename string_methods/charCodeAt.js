@@ -16,11 +16,11 @@ in the arguments list.
 
 // Example:
 
-const fruits1 = ['apple', 'banana'];
+const fruits1 = ['apple', 'banana', 'kiwi'];
 const fruits2 = ['orange', 'grape'];
 const allFruits = fruits1.concat(fruits2);
 
-console.log(allFruits); // Output: ['apple', 'banana', 'orange', 'grape']
+console.log(allFruits); // Output: ['apple', 'banana', 'kiwi', 'orange', 'grape']
 
 /*
 The concat() method is useful when you need to combine arrays without modifying 
