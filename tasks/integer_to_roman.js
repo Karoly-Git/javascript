@@ -31,5 +31,5 @@ function convertIntegerToRoman(num) {
     return result;
 }
 
-console.log(convertIntegerToRoman(6));
+console.log(convertIntegerToRoman(1566));
 
