@@ -21,6 +21,8 @@ Constraints:
 -109 <= nums[i] <= 109
 -109 <= target <= 109
 Only one valid answer exists.
+
+Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
  */
 
 /**
@@ -35,20 +37,4 @@ let twoSum = function (nums, target) {
         }
     }
 };
-
-function twoSum2(nums, target) {
-    const numToIndexMap = new Map();
-
-    for (let i = 0; i < nums.length; i++) {
-        const complement = target - nums[i];
-
-        if (numToIndexMap.has(complement)) {
-            return [numToIndexMap.get(complement), i];
-        }
-
-        numToIndexMap.set(nums[i], i);
-    }
-
-    return null; // No valid solution found
-}
 
