@@ -47,10 +47,3 @@ let plusOne = function (digits) {
     digits.unshift(1);
     return digits;
 };
-
-
-//console.log(plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 9]));
-//console.log(plusOne([6, 1, 9, 9, 9]));
-//console.log(plusOne([6, 9, 9, 9, 9]));
-//console.log(plusOne([0]));
-console.log(plusOne([5, 9, 8, 7, 5, 6, 8, 9, 7, 8, 9]));
