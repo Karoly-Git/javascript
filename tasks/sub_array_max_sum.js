@@ -78,6 +78,7 @@ function kadanesAlgorithm(array) {
 
 
 let array = [-9, 2, -5, 8, -4, 0, 6, -2, 10, -8, 3, -7, 1, 5, -3, 9, 7, -10, 4, -1];
+array = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 
 console.log('\nFor... loop result:');
 console.log(findMaxValueOfSubArray(2, array));
